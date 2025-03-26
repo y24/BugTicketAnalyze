@@ -1,0 +1,19 @@
+{
+    "csv":{
+        "dir": "data",
+        "data": "bug_tickets_3class.csv",
+        "ignores": "ignores.csv"
+    },
+    "columns":{
+        "source": "詳細",
+        "target": "重要度"
+    },
+    "severity_map": {
+        "低": 0, "中": 1, "高": 2
+    },
+    "model":{
+        "dir": "models",
+        "name": "3class_bug_severity_model.pkl",
+        "vectorizer_name": "3class_tfidf_vectorizer.pkl"
+    }
+}
