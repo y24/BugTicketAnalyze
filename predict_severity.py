@@ -19,7 +19,7 @@ model = joblib.load(f"{model_dir}/{model_name}")
 vectorizer = joblib.load(f"{model_dir}/{vectorizer_name}")
 
 # 新規データの分類
-new_text = "スワードリセットのメールがユーザーに届きません"
+new_text = "アプリがクラッシュします"
 new_text_preprocessed = preprocess_text(new_text)
 new_vector = vectorizer.transform([new_text_preprocessed])
 
