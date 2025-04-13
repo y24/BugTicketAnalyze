@@ -65,33 +65,6 @@ model = Word2Vec(sentences=tokenized_texts, vector_size=100, window=5, min_count
 X_word2vec = np.array([np.mean([model.wv[word] for word in words if word in model.wv] or [np.zeros(100)], axis=0)
                        for words in tokenized_texts])
 
-
-# -------------------
-# 3. クラスタリングによる傾向分類
-# -------------------
-
-# # (1) K-Means を用いたクラスタリング
-# from sklearn.cluster import KMeans
-
-# num_clusters = 3  # クラスター数
-# kmeans = KMeans(n_clusters=num_clusters, random_state=42)
-# df["cluster"] = kmeans.fit_predict(X_tfidf)
-
-# # クラスタごとのデータを確認
-# print(df[["タイトル", "cluster"]], "\n")
-
-
-# # (2) PCA による可視化
-# import matplotlib.pyplot as plt
-# from sklearn.decomposition import PCA
-
-# pca = PCA(n_components=2)
-# X_pca = pca.fit_transform(X_tfidf.toarray())
-
-# plt.scatter(X_pca[:, 0], X_pca[:, 1], c=df["cluster"], cmap="viridis")
-# plt.colorbar()
-# plt.show()
-
 # -------------------
 # 4. 重要度の数値化
 # -------------------
